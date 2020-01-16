@@ -49,7 +49,8 @@ genGrid();
 function someF (e) {
     var id = e.target.getAttribute("id")
     e.target.lastChild.innerHTML = firstPlayer;
-       
+    e.target.style.backgroundColor = "#FDE900";
+
     if(firstPlayer == xx){  
         firstPlayer = circle;
         playerX.push(parseInt(id)) 
