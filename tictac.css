@@ -1,4 +1,26 @@
 h1 {
-    font-family: "Amatic SC";
-    font-size: 20px;
+    font-family: "Amatic SC",Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    text-align: center;
+}
+#board {
+    display: flex;
+    justify-content: center;
+}
+table {  
+    border: 2px solid;
+    width: 500px;
+    height: 500px;
+}
+td {
+    border: 2px solid black;
+    height: 100px;
+    background-color: #92A4E7;
+    text-align: center;
+    min-width: 90px;
+    font-size: 70px; 
+}
+
+.material-icons {
+    font-size: 90px;
 }
