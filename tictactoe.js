@@ -5,10 +5,8 @@ var xx = "close"
 var firstPlayer = xx;
 var playerX = [];
 var playerO = [];
-var players = [];
 var moves = 0;
 var winCond = [
-
     [1,2,3],
     [4,5,6],
     [7,8,9],
@@ -19,7 +17,7 @@ var winCond = [
     [3,5,7]
 ];
 
-function genGrid(){
+function genBoard(){
     var count = 0;
     var table = document.createElement("table");
 
@@ -37,32 +35,66 @@ function genGrid(){
             tr.appendChild(td);
             count++
             td.id = count;
-
-            td.addEventListener("click", someF);      
+            td.addEventListener("click", game);      
         }
         table.appendChild(tr);
     }
     board.appendChild(table);
 }
-genGrid();
+genBoard();
 
-function someF (e) {
+function game (e) {
     var id = e.target.getAttribute("id")
     e.target.lastChild.innerHTML = firstPlayer;
     e.target.style.backgroundColor = "#FDE900";
 
     if(firstPlayer == xx){  
         firstPlayer = circle;
-        playerX.push(parseInt(id)) 
-        playerX.sort(); 
-                 
-    }else
-    {
+        playerX.push(parseInt(id))                  
+    }else{
         firstPlayer = xx;
         playerO.push(parseInt(id))
-        playerO.sort();
     }
-    e.target.removeEventListener("click",someF);
-    players.push(playerX,playerO);     
-    moves++       
+    e.target.removeEventListener("click",game);   
+    moves++;
+
+    if(moves >= 5){
+        winLog();
+    }  
+}
+
+function winLog (){
+   
+    let winnerArr1 = winCond.filter(c1 => c1.filter(p1 => {
+    return playerX.indexOf(p1) > -1;
+    }).length == 3);
+
+   if(winnerArr1.length == 1){
+       alert("X wins !");
+       newGame();
+   }
+
+   let winnerArr2 = winCond.filter(c2 => c2.filter(p2 => {
+       return playerO.indexOf(p2) > -1;
+   }).length == 3);
+
+   if(winnerArr2.length == 1){
+       alert("O wins !");
+       newGame();
+   }
+   if(winnerArr1.length == 0 && winnerArr2.length == 0 && moves == 9){
+       alert("Unresolved !");
+       newGame();
+   }
+}
+
+function newGame (){
+    while(board.hasChildNodes()){
+        board.removeChild(board.lastChild);
+    }
+    genBoard();
+    moves = 0;
+    playerX = [];
+    playerO = [];
+    firstPlayer = xx;
 }
