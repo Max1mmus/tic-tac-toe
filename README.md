@@ -1,6 +1,12 @@
-# tic-tac-toe
+# Tic-tac-toe
  
- Tic-Tac-Toe preview :) 
+ ## Made with:
+ 
+ * Pure JavaScript
+ * CSS
+ * HTML
+ 
+Preview :) :
  
  ![tictac](https://raw.githubusercontent.com/Max1mmus/tic-tac-toe/master/tictac.gif)
  
