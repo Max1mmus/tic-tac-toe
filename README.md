@@ -1,5 +1,7 @@
 # Tic-tac-toe
  
+ My first tic-tac-toe game built from scratch.
+ 
  ### After you clone repo :
 
 1. run `npm install` to install packages.
