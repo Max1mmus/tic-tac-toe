@@ -2,7 +2,7 @@
  
  My first tic-tac-toe game built from scratch.
  
- https://max1mmus.github.io/tic-tac-toe/
+ DEMO : https://max1mmus.github.io/tic-tac-toe/
  
  ### After you clone repo :
 
