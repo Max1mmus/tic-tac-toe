@@ -27,6 +27,7 @@ td {
     background-color: #92A4E7;
     text-align: center;
     min-width: 100px;
+    max-width: 100px;
     font-size: 70px;  
 }
 
