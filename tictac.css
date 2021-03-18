@@ -33,4 +33,5 @@ td {
 
 .material-icons {
     font-size: 90px;
+    user-select: none;
 }
